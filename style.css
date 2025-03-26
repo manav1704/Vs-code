@@ -87,6 +87,7 @@ section {
     border-color: var(--text-color);
     font-weight: 500;
     transition: all 0.3s;
+    align: Centre;
 }
 
 .btn.primary {
