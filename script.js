@@ -1,29 +1,25 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Smooth scrolling
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-              behavior: 'smooth'
-          });
-      });
-  });
+/* script.js */
+document.addEventListener("DOMContentLoaded", function () {
+    const nav = document.querySelector("nav");
+    
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+            nav.style.background = "rgba(0, 0, 0, 0.9)";
+        } else {
+            nav.style.background = "rgba(0, 0, 0, 0.8)";
+        }
+    });
 
-  // Form handling
-  const form = document.getElementById('contact-form');
-  const thankYouMessage = document.getElementById('thank-you-message');
-
-  form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      thankYouMessage.innerHTML = `
-          <div class="success-message">
-              Thanks ${name}! I'll get back to you soon.
-          </div>
-      `;
-      form.reset();
-      setTimeout(() => {
-          thankYouMessage.innerHTML = '';
-      }, 5000);
-  });
+    const links = document.querySelectorAll(".nav-links a");
+    links.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+            window.scrollTo({
+                top: targetElement.offsetTop - 60,
+                behavior: "smooth"
+            });
+        });
+    });
 });
