@@ -1,55 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manav | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <title>Alex Carter | Interactive Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/transitions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">Manav</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="is-loading">
+    <!-- Page Transition Overlay -->
+    <div class="transition-overlay"></div>
     
+    <!-- Animated Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="glass-effect">
+        <div class="container">
+            <a href="index.html" class="logo" data-text="AC">AC</a>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link hover-underline active">Home</a></li>
+                <li><a href="about.html" class="nav-link hover-underline">About</a></li>
+                <li><a href="projects.html" class="nav-link hover-underline">Projects</a></li>
+                <li><a href="contact.html" class="nav-link hover-underline">Contact</a></li>
+                <li><a href="blog.html" class="nav-link hover-underline">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Hey, I'm Manav</h1>
-            <p>A Software Developer & Designer</p>
-            <a href="#projects" class="btn">View My Work</a>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="text-gradient">Hi, I'm <span class="typing-effect" data-words='["Alex Carter","a Developer","a Designer","a Problem Solver"]'></span></h1>
+                <p class="subtitle">Creating digital experiences that matter</p>
+                <div class="cta-buttons">
+                    <a href="projects.html" class="btn btn-primary" data-transition="slide">View My Work</a>
+                    <a href="contact.html" class="btn btn-secondary" data-transition="slide">Hire Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="assets/hero-image.png" alt="Alex Carter" class="floating">
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>I'm a passionate developer with experience in front-end and back-end development...</p>
-    </section>
-
-    <section id="projects" class="projects">
-        <h2>Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">Project 1</div>
-            <div class="project-card">Project 2</div>
-            <div class="project-card">Project 3</div>
+    <!-- Featured Projects Preview -->
+    <section id="featured" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+            <div class="projects-grid">
+                <!-- Project items will be loaded dynamically via JS -->
+            </div>
+            <div class="text-center">
+                <a href="projects.html" class="btn btn-outline" data-transition="slide">View All Projects</a>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <p>Email: manavsrivastava4@gmail.com</p>
-        <p>Phone: 6203298884</p>
+    <!-- Skills Preview -->
+    <section id="skills-preview" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">My <span class="text-gradient">Skills</span></h2>
+            <div class="skills-cloud">
+                <!-- Skills will be loaded dynamically via JS -->
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Manav | All Rights Reserved</p>
-    </footer>
+    <script src="js/particles.js"></script>
+    <script src="js/transitions.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
